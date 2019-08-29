@@ -138,7 +138,7 @@ impl Error for TiffError {
         }
     }
 
-    fn cause(&self) -> Option<&dyn Error> {
+    fn cause(&self) -> Option<&Error> {
         match *self {
             TiffError::IoError(ref e) => Some(e),
             _ => None,
